@@ -3,14 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/my-component-lib.umd.js",
+  "module": "./dist/my-component-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-component-lib.es.js",
+      "require": "./dist/my-component-lib.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --emitDeclarationOnly && vite build && mv dist/src dist/types",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
