@@ -20,6 +20,8 @@ jobs:
         run: npm ci
       - name: Release
         run: npx semantic-release
+        with:
+          branches: "main"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
