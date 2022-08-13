@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-      - name: Install dependencies
+      - name: Install dependencies, Running Build
         run: |
          npm ci
          npm run build
