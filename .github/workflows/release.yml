@@ -18,8 +18,8 @@ jobs:
           node-version: 'lts/*'
       - name: Install dependencies, Running Build
         run: |
-         npm ci
-         npm run build
+         yarn install --frozen-lockfile
+         yarn build
       - name: Release
         run: npx semantic-release --branches main
         env:
